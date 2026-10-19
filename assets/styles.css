@@ -2823,6 +2823,87 @@ footer {
   }
 }
 
+/* Keep navigation and every testimony available on smaller screens. */
+@media (max-width: 1000px) {
+  .site-header {
+    height: auto;
+    min-height: 68px;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding-block: 12px;
+  }
+
+  .site-header nav {
+    flex: 1 1 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .site-header nav a,
+  .site-header nav a:not(.nav-cta),
+  .site-header nav a.nav-help {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    margin: 0;
+  }
+
+  html { scroll-padding-top: 140px; }
+
+  .voice-switcher {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .voice-switcher button {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .voice-thumb { width: 48px; height: 60px; }
+  .voice-copy > span { font-size: 17px; }
+  .voice-copy small { white-space: normal; overflow: visible; line-height: 1.4; }
+}
+
+@media (max-width: 767px) {
+  .brand-copy { display: block; max-width: 76px; }
+  .header-identity { width: 100%; justify-content: space-between; }
+  .site-header { gap: 4px; padding-block: 10px 6px; }
+  .site-header nav { flex-wrap: wrap; font-size: 11px; }
+  .site-header nav .nav-cta { padding: 10px 14px; }
+
+  .voice-switcher {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 0 0 24px;
+    padding: 8px;
+    border-radius: var(--radius-md);
+    overflow: visible;
+  }
+
+  .voice-switcher button {
+    min-height: 92px;
+    padding: 10px 8px;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .voice-switcher button:last-child { grid-column: 1 / -1; }
+  .voice-switcher button::after { display: none; }
+  .voice-thumb { width: 40px; height: 56px; }
+  .voice-copy > span { font-size: 15px; line-height: 1.25; }
+  .voice-copy small { font-size: 11px; }
+
+  .story-stage { min-width: 0; }
+  .story-image { height: 360px; min-height: 0; }
+  .story-image img { object-position: center 30%; }
+  .story-content { min-width: 0; padding: 28px 20px; }
+  .story-meta { flex-wrap: wrap; gap: 6px 12px; }
+  .story-content h3 { font-size: clamp(28px, 8vw, 42px); overflow-wrap: break-word; }
+  .story-content .audio-player { min-width: 0; }
+}
+
 /* Admin wall curation */
 [hidden] {
   display: none !important;
