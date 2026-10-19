@@ -2902,6 +2902,27 @@ footer {
   .story-meta { flex-wrap: wrap; gap: 6px 12px; }
   .story-content h3 { font-size: clamp(28px, 8vw, 42px); overflow-wrap: break-word; }
   .story-content .audio-player { min-width: 0; }
+
+  .wall-spotlight {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    gap: 24px;
+    margin-left: 0;
+    padding: 28px 22px;
+  }
+
+  .wall-spotlight::before { display: none; }
+  .wall-spotlight-copy { min-width: 0; max-width: 100%; }
+  .wall-spotlight-copy > svg { width: 44px; height: 44px; margin-bottom: 16px; }
+  .wall-spotlight-copy blockquote {
+    font-size: clamp(24px, 6.5vw, 32px);
+    line-height: 1.25;
+    overflow-wrap: break-word;
+  }
+  .wall-spotlight-controls { width: 100%; min-width: 0; }
+  .wall-layout,
+  .wall-form,
+  .wall-feed { min-width: 0; }
 }
 
 /* Admin wall curation */
