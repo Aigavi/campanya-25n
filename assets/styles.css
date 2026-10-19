@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: "Public Sans Campaign";
   src: url("/fonts/public-sans-latin-ext.woff2") format("woff2");
@@ -2691,4 +2693,264 @@ footer {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-portrait { animation: none; }
+}
+
+.admin-login-shell { min-height: 100vh; display: grid; align-content: center; gap: 2rem; }
+.admin-login-card { width: min(100%, 34rem); padding: clamp(2rem, 5vw, 4rem); border-radius: 2rem; background: var(--surface); box-shadow: 0 1rem 4rem rgba(57, 35, 70, .1); }
+.admin-login-card h1 { margin: .5rem 0 1rem; }
+.admin-login-form { display: grid; gap: 1rem; margin-top: 2rem; }
+.admin-login-form label { font-weight: 700; }
+.admin-login-form input { width: 100%; min-height: 3.25rem; padding: .85rem 1rem; border: 1px solid rgba(72, 42, 89, .25); border-radius: 1rem; background: #fff; color: var(--ink); font: inherit; }
+.admin-session { border: 0; background: transparent; color: inherit; font: inherit; cursor: pointer; text-decoration: underline; }
+
+/* Public safety and action cues */
+.hero-help-link {
+  display: inline-grid;
+  gap: 3px;
+  width: fit-content;
+  margin-top: 22px;
+  padding: 11px 14px;
+  border-radius: 14px;
+  background: var(--purple-wash);
+  color: var(--purple-deep);
+  font-size: 13px;
+  font-weight: 720;
+}
+
+.hero-help-link small {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 520;
+}
+
+.action-link {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 22px;
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--purple-deep);
+  font-size: 12px;
+  font-weight: 720;
+  text-decoration: none;
+}
+
+.action-path article:nth-child(3) .action-link {
+  background: rgb(255 255 255 / 0.13);
+  color: var(--surface);
+}
+
+.action-link-button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+.wall-emergency-note {
+  display: grid;
+  gap: 4px;
+  margin: 0 0 24px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #ebe1ee;
+  color: var(--purple-deep);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.wall-emergency-note span {
+  color: var(--muted);
+}
+
+.wall-emergency-note a {
+  color: var(--purple-deep);
+  font-weight: 760;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .site-header nav a.nav-help {
+    display: inline-flex;
+    margin-right: 12px;
+  }
+
+  .hero-help-link {
+    margin-top: 18px;
+  }
+}
+
+/* Admin wall curation */
+[hidden] {
+  display: none !important;
+}
+
+.admin-message-list {
+  gap: 34px;
+}
+
+.admin-message-group {
+  padding: clamp(22px, 3vw, 34px);
+  border-radius: 24px;
+  background: #f4f0f5;
+}
+
+.admin-message-group-featured {
+  background: #ebe1ee;
+}
+
+.admin-message-group > header {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.admin-message-group > header h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 620;
+  letter-spacing: -0.035em;
+}
+
+.admin-message-group > header p {
+  max-width: 610px;
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.admin-message-group > header > span {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  background: rgb(255 255 255 / 0.7);
+  color: var(--purple-deep);
+  font-size: 12px;
+  font-weight: 680;
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-group-list {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-group-empty {
+  margin: 0;
+  padding: 28px;
+  border-radius: 16px;
+  background: rgb(255 255 255 / 0.62);
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.admin-message {
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 0 12px 34px rgb(57 35 70 / 0.07);
+}
+
+.admin-message-featured {
+  background: var(--purple-deep);
+  color: var(--surface);
+  box-shadow: 0 16px 38px rgb(57 35 70 / 0.18);
+}
+
+.admin-message-featured .admin-message-meta,
+.admin-message-featured .admin-message-meta span {
+  color: #e7dbea;
+}
+
+.admin-message-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-position {
+  color: var(--purple-deep);
+  font-weight: 720;
+}
+
+.admin-action {
+  border: 0;
+  background: #f0eaf2;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease, transform 150ms var(--ease-out);
+}
+
+.admin-action-feature {
+  background: var(--purple-deep);
+  color: var(--surface);
+}
+
+.admin-message-featured .admin-action {
+  background: rgb(255 255 255 / 0.13);
+  color: var(--surface);
+}
+
+.admin-message-featured .admin-action-unfeature {
+  background: var(--surface);
+  color: var(--purple-deep);
+}
+
+.admin-action-reject {
+  color: #8a2740;
+}
+
+.admin-action:disabled {
+  cursor: default;
+  opacity: 0.38;
+}
+
+.admin-order-note {
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: var(--purple-wash);
+}
+
+.admin-loading {
+  border: 0;
+  border-radius: 24px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .admin-action:not(:disabled):hover {
+    border-color: transparent;
+    background: #dfd1e4;
+    transform: translateY(-1px);
+  }
+
+  .admin-action-feature:hover,
+  .admin-message-featured .admin-action-unfeature:hover {
+    background: var(--purple);
+    color: var(--surface);
+  }
+}
+
+@media (max-width: 720px) {
+  .admin-message-group {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .admin-message-group > header,
+  .admin-message-meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-message-group > header {
+    gap: 12px;
+  }
+
+  .admin-message {
+    padding: 22px;
+  }
 }
